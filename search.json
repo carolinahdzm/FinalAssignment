@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "What makes an article popular? How does articles link to each other?\nThis website contains information on an analysis done on a network created with dataset of articles from 2008. Looking for their popularity measured by node degree, and compute assortivity by topics.\nTo achieve this, we utilized network analysis to create a graph representation of meme article connections via their links to each other, and we performed NLP techniques to extract keywords and sentiment from article titles and key phrases."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project B",
+    "section": "",
+    "text": "Welcome to our website!\nmeme (noun): an element of a culture or system of behavior that may be considered to be passed from one indiviudal to another by nongenetic means, especially imitation.\nFind how memes connect each other what makes them popular!"
+  },
+  {
+    "objectID": "community.html",
+    "href": "community.html",
+    "title": "Network",
+    "section": "",
+    "text": "Communities.png\n\n\n\nWhy filter the dataset to the 100 largest weakly connected components?\nEven after the prepossessing which filtered away many of the nodes without text, we still had a network with millions of nodes. However, many of these nodes were isolated articles that were only connected to one or two other nodes which were otherwise isolated from the rest of the nodes. We expect these to be small articles about very specific topics, and we decided to focus on the nodes that where in more connected parts of the network, since we believed they would represent larger news stories about the more popular topics. We extract this subgraph because we want to use NLP to analyse the large clusters.\n\n\nCommunity plot\nAfter performing that filtering, we still had a network with around 11.000 nodes and edges. We performed community detection within these connected subcomponents, and the result can be seen in the network, where each node is coloured by their community. It can be seen that there are tendencies for some nodes to be exclusively connected to the same one high degree node which we hypothesise can be a breaking news story which many other articles will reference two. We do not report the modularity since it does not make sense to analyse when we have filtered out all the isolated nodes."
+  },
+  {
+    "objectID": "Sentiment.html",
+    "href": "Sentiment.html",
+    "title": "Sentiment",
+    "section": "",
+    "text": "sentiment_image.png"
+  },
+  {
+    "objectID": "Sentiment.html#sentiment-plot",
+    "href": "Sentiment.html#sentiment-plot",
+    "title": "Sentiment",
+    "section": "Sentiment plot",
+    "text": "Sentiment plot\nThe sentiment network plot has colored positive articles in green and negative ones in red based on their sentiment scores, whilst neutral was colored grey. The plot also shows how the clusters/groups of articles tends to share sentiment levels.\n\nAssortativity coefficient with respect to sentiment\nWe computed the log normalised sentiment for each article by summing the nltk sentiment score of each word in the key phrases and dividing by the log length of the key phrases. This gave of a measure of the overall sentiment of an article, which we used to compute the assortativity wrt. sentiment.\n\nSentiment Assortativity coefficient = 0.143\nThis coefficient confirms our hypothesis that positive articles are more likely to link to other positive articles whilst negative articles are more likely to link to other negative articles, then they would be expected to by random. The same goes for neutral articles.\n\n\n\nSentiment distribution histogram\nAs the histogram shows we have many articles with an average neutral sentiment (sentiment = 0) and less so that are overall positively or negatively charged. Most are within the range of [-1,1] with a few outliers.\n\n\n\nSentimentsScoresNormalisedHistogram.png"
+  },
+  {
+    "objectID": "wordclouds.html",
+    "href": "wordclouds.html",
+    "title": "WordClouds and Key-Words",
+    "section": "",
+    "text": "How did the rhetorics of news articles around Obama and McCain differ?\nGoing further than the sentiment of the articles, we also analyzed the words used in articles related to Obama and his republican counterpart John McCain. The words most often used in their context are visualized in two word clouds. Blue for the Obama and red for McCain. A striking difference between the two, is how often Obama was used in articles with McCain, whereas the name McCain did not appear nearly as often in articles with Obama. This may likely be due to our analysis period. We analyze articles from 2008 to 2009. While both names are likely to be used in the same article before the election, the focus shifts to the winner right. By the end of 2008, after Obama was elected, McCain did not get nearly as much media attention anymore.\n\nObama Wordcloud\n\n\n\ndescarga(13).png\n\n\n\n\nMcCain Wordcloud\n\n\n\ndescarga.png\n\n\n\n\n\nWhat are the large communities in our meme network?\nOur network is comprised of mostly unconnected nodes and small clusters. However, due to the sheer size of our network, we still found some large communities. The topics of these communities differ significantly. The US presidential election of 2008 is the main topic in four of the ten largest communities. Three word clouds of large communities in our network are shown below to give an overview of the topics. Our largest community is the “True crime community”. It is composed of articles of shocking stories, often involving killing and other horrible stories happening around the world. It’s the type of article that makes people believe that everything in our world is bad. The second largest is the “US elections community”. And finally the ninth largest community is dedicated to love-life. We shall refer to it as the “Heartbeats community”.\n\nCommunity 1\n\n\n\nCommunity 2\n\n\n\nCommunity 9\n\n\n\n\nKeyword filtering example: “Obama”\nAn interesting potential user feature of our tool is that one can filter the network for one or more keywords and only look at the network of articles that contain one or more of these and analyse that. We made an example with Obama, who was elected president on November 4th 2008, during the period in which our data is recorded. The visuals show how the network grows for each month, where the nodes are coloured by sentiment.\n\n\nObama timeline sentiment\nThe line graph shows how the monthly averages sentiment scores of all the articles, the overall positive articles and the overall negative articles change during the period from August 2008 to March 2009. Obama widely known to have had a good closing month during October before the election on November 4th, which can also be seen on the graph. It is interesting to see how the negative articles are at their most negative just before the election in October and then again in February, just as the bear market was going down to its lowest level indicated by the Dow Jones index. It is also interesting that the positivity of the positive articles seems to go up during the same periods as if to counterattack the negativity.\n\nObama Gif\n\n\n\nnetwork_animation"
+  }
+]
