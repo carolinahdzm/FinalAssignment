@@ -3,13 +3,13 @@
 
 body {
     background-image: url("visuals_for_website/Communities.png");
-    background-color: rgb(255, 255, 255); /* Adjust the opacity value (0.5) to change the transparency */
+    background-color: rgb(255, 255, 088); /* Adjust the opacity value (0.5) to change the transparency */
     background-repeat: no-repeat;
     background-size: cover;
     
   }
 
   h1, h2, p {
-    color: #000000; /* Change to the desired font color */
+    color: #ffffff; /* Change to the desired font color */
     font-weight: bold;
   }
