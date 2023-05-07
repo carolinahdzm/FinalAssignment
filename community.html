@@ -89,6 +89,16 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/Morell1123/FinalProjectAssignment">
+            Repository
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -201,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components" class="level3">
 <h3 class="anchored" data-anchor-id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components">Why filter the dataset to the 100 largest weakly connected components?</h3>
-<p>Even after the prepossessing which filtered away many of the nodes without text, we still had a network with millions of nodes. However, many of these nodes were isolated articles that were only connected to one or two other nodes which were otherwise isolated from the rest of the nodes. We expect these to be small articles about very specific topics, and we decided to focus on the nodes that where in more connected parts of the network, since we believed they would represent larger news stories about the more popular topics. We extract this subgraph because we want to use NLP to analyse the large clusters.</p>
+<p>Even after the prepossessing which filtered out many of the nodes without text, we still had a network with millions of nodes. However, many of these nodes were isolated articles that were only connected to one or two other nodes which were otherwise isolated from the rest of the nodes. We expect these to be small articles about very specific topics, and we decided to focus on the nodes that where in more connected parts of the network, since we believed they would represent larger news stories about the more popular topics. We extract this subgraph because we want to use NLP to analyse the large clusters.</p>
 </section>
 <section id="community-plot" class="level3">
 <h3 class="anchored" data-anchor-id="community-plot">Community plot</h3>
