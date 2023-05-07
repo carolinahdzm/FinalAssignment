@@ -183,10 +183,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#community-plot" id="toc-community-plot" class="nav-link" data-scroll-target="#community-plot">Community plot</a>
   <ul class="collapse">
   <li><a href="#why-filter-the-dataset-to-the-100-largest-weakly-connected-components" id="toc-why-filter-the-dataset-to-the-100-largest-weakly-connected-components" class="nav-link" data-scroll-target="#why-filter-the-dataset-to-the-100-largest-weakly-connected-components">Why filter the dataset to the 100 largest weakly connected components?</a></li>
-  <li><a href="#community-plot" id="toc-community-plot" class="nav-link" data-scroll-target="#community-plot">Community plot</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -211,12 +211,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="community_files/figure-html/7ab3b768-1-Communities.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Communities.png</figcaption>
-</figure>
-</div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>For our project we analyze a huge dataset on articles and blog posts. We are interested in seing how these articles link to each other and whether there’s a difference between positive and negative sentiment and how it impacts their links to each other. Furthermore, we are curious about exploring the large communities of articles.</p>
@@ -226,13 +220,19 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://drive.google.com/drive/folders/1ZYnA2M0SuVkAK6MNaS3izN7WweaBy16c?usp=sharing">Obama, McCain networks</a></p>
 <p><a href="https://drive.google.com/drive/folders/1jznB111l8lLcayAkjB4vksgbQnrBUvRB?usp=sharing">Top-10 community network</a></p>
 <p><img src="visuals_for_website/Degree_distribution.png" alt="Degree Distribution" width="500" height="400"></p>
+</section>
+<section id="community-plot" class="level2">
+<h2 class="anchored" data-anchor-id="community-plot">Community plot</h2>
+<p>After performing that filtering, we still had a network with around 11.000 nodes and edges. We performed community detection within these connected subcomponents, and the result can be seen in the network, where each node is coloured by their community. It can be seen that there are tendencies for some nodes to be exclusively connected to the same one high degree node which we hypothesise can be a breaking news story which many other articles will reference two. We do not report the modularity since it does not make sense to analyse when we have filtered out all the isolated nodes.</p>
 <section id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components" class="level3">
 <h3 class="anchored" data-anchor-id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components">Why filter the dataset to the 100 largest weakly connected components?</h3>
 <p>Even after the prepossessing which filtered out many of the nodes without text, we still had a network with millions of nodes. However, many of these nodes were isolated articles that were only connected to one or two other nodes which were otherwise isolated from the rest of the nodes. We expect these to be small articles about very specific topics, and we decided to focus on the nodes that where in more connected parts of the network, since we believed they would represent larger news stories about the more popular topics. We extract this subgraph because we want to use NLP to analyse the large clusters.</p>
-</section>
-<section id="community-plot" class="level3">
-<h3 class="anchored" data-anchor-id="community-plot">Community plot</h3>
-<p>After performing that filtering, we still had a network with around 11.000 nodes and edges. We performed community detection within these connected subcomponents, and the result can be seen in the network, where each node is coloured by their community. It can be seen that there are tendencies for some nodes to be exclusively connected to the same one high degree node which we hypothesise can be a breaking news story which many other articles will reference two. We do not report the modularity since it does not make sense to analyse when we have filtered out all the isolated nodes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="community_files/figure-html/7ab3b768-1-Communities.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Communities.png</figcaption>
+</figure>
+</div>
 
 
 </section>
