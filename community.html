@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ProjectB - Network</title>
+<title>ProjectB - WordClouds and Key-Words</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
             Repository
             </a>
           </li>
-        <li>
+          <li>
             <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/Morell1123/FinalProjectAssignment/blob/main/Explainer_Notebook.ipynb">
             Explainer Notebook
             </a>
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./community.html">Network</a></li><li class="breadcrumb-item"><a href="./community.html">Network</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Sentiment.html">NLP Analysis</a></li><li class="breadcrumb-item"><a href="./wordclouds.html">WordClouds and Key-Words</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./community.html" class="sidebar-item-text sidebar-link active">
+  <a href="./community.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Network</span></a>
   </div>
 </li>
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wordclouds.html" class="sidebar-item-text sidebar-link">
+  <a href="./wordclouds.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">WordClouds and Key-Words</span></a>
   </div>
 </li>
@@ -183,8 +183,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-filter-the-dataset-to-the-100-largest-weakly-connected-components" id="toc-why-filter-the-dataset-to-the-100-largest-weakly-connected-components" class="nav-link active" data-scroll-target="#why-filter-the-dataset-to-the-100-largest-weakly-connected-components">Why filter the dataset to the 100 largest weakly connected components?</a></li>
-  <li><a href="#community-plot" id="toc-community-plot" class="nav-link" data-scroll-target="#community-plot">Community plot</a></li>
+  <li><a href="#community-topics" id="toc-community-topics" class="nav-link active" data-scroll-target="#community-topics">Community topics</a>
+  <ul class="collapse">
+  <li><a href="#what-are-the-large-communities-in-our-meme-network" id="toc-what-are-the-large-communities-in-our-meme-network" class="nav-link" data-scroll-target="#what-are-the-large-communities-in-our-meme-network">What are the large communities in our meme network?</a></li>
+  </ul></li>
+  <li><a href="#us-presidential-elections" id="toc-us-presidential-elections" class="nav-link" data-scroll-target="#us-presidential-elections">US Presidential Elections</a>
+  <ul class="collapse">
+  <li><a href="#how-did-the-rhetorics-of-news-articles-around-obama-and-mccain-differ" id="toc-how-did-the-rhetorics-of-news-articles-around-obama-and-mccain-differ" class="nav-link" data-scroll-target="#how-did-the-rhetorics-of-news-articles-around-obama-and-mccain-differ">How did the rhetorics of news articles around Obama and McCain differ?</a></li>
+  <li><a href="#keyword-filtering-example-obama" id="toc-keyword-filtering-example-obama" class="nav-link" data-scroll-target="#keyword-filtering-example-obama">Keyword filtering example: “Obama”</a></li>
+  <li><a href="#obama-timeline-sentiment" id="toc-obama-timeline-sentiment" class="nav-link" data-scroll-target="#obama-timeline-sentiment">Obama timeline sentiment</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Network</h1>
+<h1 class="title">WordClouds and Key-Words</h1>
 </div>
 
 
@@ -208,21 +216,68 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="community-topics" class="level2">
+<h2 class="anchored" data-anchor-id="community-topics">Community topics</h2>
+<section id="what-are-the-large-communities-in-our-meme-network" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-the-large-communities-in-our-meme-network">What are the large communities in our meme network?</h3>
+<p>Our network is comprised of mostly unconnected nodes and small clusters. However, due to the sheer size of our network, we still found some large communities. The topics of these communities differ significantly. The US presidential election of 2008 is the main topic in four of the ten largest communities. Three word clouds of large communities in our network are shown below to give an overview of the topics. Our largest community is the “True crime community”. It is composed of articles of shocking stories, often involving killing and other horrible stories happening around the world. It’s the type of article that makes people believe that everything in our world is bad. The second largest is the “US elections community”. And finally the ninth largest community is dedicated to love-life. We shall refer to it as the “Heartbeats community”.</p>
+<section id="true-crime-community" class="level4">
+<h4 class="anchored" data-anchor-id="true-crime-community">True Crime Community</h4>
+<p><img src="visuals_for_website/wc1.png" alt="wc1.png" width="500" height="400"></p>
+</section>
+<section id="us-elections-community" class="level4">
+<h4 class="anchored" data-anchor-id="us-elections-community">US Elections Community</h4>
+<p><img src="visuals_for_website/wc2.png" alt="wc2.png" width="500" height="400"></p>
+</section>
+<section id="heatbeats-community" class="level4">
+<h4 class="anchored" data-anchor-id="heatbeats-community">Heatbeats Community</h4>
+<p><img src="visuals_for_website/wc9.png" alt="wc9.png" width="500" height="400"></p>
+</section>
+</section>
+</section>
+<section id="us-presidential-elections" class="level2">
+<h2 class="anchored" data-anchor-id="us-presidential-elections">US Presidential Elections</h2>
+<section id="how-did-the-rhetorics-of-news-articles-around-obama-and-mccain-differ" class="level3">
+<h3 class="anchored" data-anchor-id="how-did-the-rhetorics-of-news-articles-around-obama-and-mccain-differ">How did the rhetorics of news articles around Obama and McCain differ?</h3>
+<p>Going further than the sentiment of the articles, we also analyzed the words used in articles related to Obama and his republican counterpart John McCain. The words most often used in their context are visualized in two word clouds. Blue for the Obama and red for McCain. A striking difference between the two, is how often Obama was used in articles with McCain, whereas the name McCain did not appear nearly as often in articles with Obama. This may likely be due to our analysis period. We analyze articles from 2008 to 2009. While both names are likely to be used in the same article before the election, the focus shifts to the winner. By the end of 2008, after Obama was elected, McCain did not get nearly as much media attention anymore.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="community_files/figure-html/7ab3b768-1-Communities.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Communities.png</figcaption>
+<p><img src="visuals_for_website/descarga(13).png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Obama</figcaption>
 </figure>
 </div>
-<section id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components" class="level3">
-<h3 class="anchored" data-anchor-id="why-filter-the-dataset-to-the-100-largest-weakly-connected-components">Why filter the dataset to the 100 largest weakly connected components?</h3>
-<p>Even after the prepossessing which filtered out many of the nodes without text, we still had a network with millions of nodes. However, many of these nodes were isolated articles that were only connected to one or two other nodes which were otherwise isolated from the rest of the nodes. We expect these to be small articles about very specific topics, and we decided to focus on the nodes that where in more connected parts of the network, since we believed they would represent larger news stories about the more popular topics. We extract this subgraph because we want to use NLP to analyse the large clusters.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="visuals_for_website/descarga.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">McCain</figcaption>
+</figure>
+</div>
 </section>
-<section id="community-plot" class="level3">
-<h3 class="anchored" data-anchor-id="community-plot">Community plot</h3>
-<p>After performing that filtering, we still had a network with around 11.000 nodes and edges. We performed community detection within these connected subcomponents, and the result can be seen in the network, where each node is coloured by their community. It can be seen that there are tendencies for some nodes to be exclusively connected to the same one high degree node which we hypothesise can be a breaking news story which many other articles will reference two. We do not report the modularity since it does not make sense to analyse when we have filtered out all the isolated nodes.</p>
+<section id="keyword-filtering-example-obama" class="level3">
+<h3 class="anchored" data-anchor-id="keyword-filtering-example-obama">Keyword filtering example: “Obama”</h3>
+<p>An interesting potential user feature of our tool is that one can filter the network for one or more keywords and only look at the network of articles that contain one or more of these and analyse that. We made an example with Obama, who was elected president on November 4th 2008, during the period in which our data is recorded. The visuals show how the network grows for each month, where the nodes are coloured by sentiment.</p>
+</section>
+<section id="obama-timeline-sentiment" class="level3">
+<h3 class="anchored" data-anchor-id="obama-timeline-sentiment">Obama timeline sentiment</h3>
+<p>The line graph shows how the monthly averages sentiment scores of all the articles, the overall positive articles and the overall negative articles change during the period from August 2008 to March 2009. Obama widely known to have had a good closing month during October before the election on November 4th, which can also be seen on the graph. It is interesting to see how the negative articles are at their most negative just before the election in October and then again in February, just as the bear market was going down to its lowest level indicated by the Dow Jones index. It is also interesting that the positivity of the positive articles seems to go up during the same periods as if to counterattack the negativity.</p>
+<section id="obama-gif" class="level4">
+<h4 class="anchored" data-anchor-id="obama-gif">Obama Gif</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="visuals_for_website/network_animation.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Obama Network</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wordclouds_files/figure-html/8a874026-1-obama_sentiment_over_time.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Obama Sentiment</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
