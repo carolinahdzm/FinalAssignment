@@ -89,6 +89,16 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/Morell1123/FinalProjectAssignment">
+            Repository
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -204,13 +214,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="sentiment-plot" class="level2">
 <h2 class="anchored" data-anchor-id="sentiment-plot">Sentiment plot</h2>
-<p>The sentiment network plot has colored positive articles in green and negative ones in red based on their sentiment scores, whilst neutral was colored grey. The plot also shows how the clusters/groups of articles tends to share sentiment levels.</p>
+<p>This graph shows portion of the article network. Positive and negative articles were coloured in green and red tones repectively. Neutral arrticles are represented by grey nodes. We computed the log normalised sentiment for each article by summing the nltk sentiment score of each word in the key phrases and dividing by the log length of the key phrases, giving us a measure of the overall sentiment of an article. Intuitively by visualizing the plot, we can hypothesize that articles with similar sentiment tend to link to each other.</p>
 <section id="assortativity-coefficient-with-respect-to-sentiment" class="level3">
 <h3 class="anchored" data-anchor-id="assortativity-coefficient-with-respect-to-sentiment">Assortativity coefficient with respect to sentiment</h3>
-<p>We computed the log normalised sentiment for each article by summing the nltk sentiment score of each word in the key phrases and dividing by the log length of the key phrases. This gave of a measure of the overall sentiment of an article, which we used to compute the assortativity wrt. sentiment.</p>
 <section id="sentiment-assortativity-coefficient-0.143" class="level5">
 <h5 class="anchored" data-anchor-id="sentiment-assortativity-coefficient-0.143">Sentiment Assortativity coefficient = 0.143</h5>
-<p>This coefficient confirms our hypothesis that positive articles are more likely to link to other positive articles whilst negative articles are more likely to link to other negative articles, then they would be expected to by random. The same goes for neutral articles.</p>
+<p>To test our hypothesis, we then calculate the assortativity coefficient of the entire graph w.r.t. the sentiment scores. This coefficient confirms our hypothesis that positive articles are more likely to link to other positive articles whilst negative articles are more likely to link to other negative articles, then they would be expected to by random. The same goes for neutral articles. This implies that people may caught up in loops of negative or positive articles.</p>
 </section>
 </section>
 <section id="sentiment-distribution-histogram" class="level3">
