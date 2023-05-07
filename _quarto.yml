@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "ProjectB"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+    tools:
+      - icon: github
+        menu:
+          - text: Repository
+            url:  https://github.com/Morell1123/FinalProjectAssignment
+          - text: Explainer Notebook
+            url: https://github.com/Morell1123/FinalProjectAssignment/blob/main/Explainer_Notebook.ipynb
+
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Network"
+        contents:
+          - community.ipynb
+      - section: "NLP Analysis"
+        contents:
+          - Sentiment.ipynb
+          - wordclouds.ipynb
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+
